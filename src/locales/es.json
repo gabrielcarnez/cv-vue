@@ -1,0 +1,47 @@
+{
+	"about": {
+		"description": "Estoy en el desarrollo de software desde hace seis años, y trabajé con muchas tecnologías, algunas viejas y otra más nueva, me gusta aprender para que no sea un problema para mí. Trabajo principalmente con tecnologías web, como PHP (con Codeigniter), Bootstrap, Jquery y React, pero también intento con otras como Vue Js, Node y algún framework JS."
+	},
+	"education": {
+		"utn": {
+			"title": "ingeniería en sistemas de información",
+			"time": "Mayo 2009 - 2020"
+		},
+		"cfp_1": {
+			"title": "desarrollo de aplicaciones desktop y web en JAVA",
+			"time": "Marzo 2015 - Diciembre 2015"
+		},
+		"cfp_2": {
+			"title": "Curso Visual Basic",
+			"time": "Marzo 2014 - Diciembre 2014"
+		}
+	},
+	"experience": {
+		"developer": "DEVELOPER",
+		"full-stack": "desarrollador full stack",
+		"front-end": "FrontEnd developer",
+		"FABA": {
+			"time": "Enero 2019 - Presente",
+			"description": "Desarrollador full stack con tecnología asp classic, bootstrap y jquey. Desarrollo de aplicaciones Mobile con JS, Vuejs, Phonegap"
+		},
+		"FREELANCE": {
+			"time": "Mayo 2014 - Presente",
+			"description": "Desarrollo de aplicaciones web en PHP, Codeigniter, Bootstrap, Jquery y Vue. Desarrollo de aplicaciones moble con JS, Vue, Phonegap y F7."
+		},
+		"ARZION": {
+			"time": "Marzo 2016 - Diciembre 2018",
+			"description": "Desarrollo de aplicaciones web en PHP, Codeigniter, Bootstrap, Jquery. Desarrollador Frontend con React."
+		},
+		"SUONPER": {
+			"time": "Marzo 2013 - Marzo 2016",
+			"description": "Desarrollo de aplicaciones web en PHP y Jquery. Desarrollo de aplicaciones moble con JS yPhonegap"
+		}
+	},
+	"skills": {
+		"responsive-design": "Diseño responsivo",
+		"cross-browser-testing-debugging": "Test de unidad",
+		"mobile-first-responsive-design": "Desarrollo mobile",
+		"cross-functional-teams": "Trabajo en equipo",
+		"agile-development-scrum": "Metodologías ágiles & Scrum"
+	}
+}

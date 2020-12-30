@@ -1,0 +1,47 @@
+{
+	"about": {
+		"description": "I'm in the software develop from six years, and I was worked with many technologies, some oldies and another more new, I like learn so that is not a problem to me. I work mainly with web technologies, like PHP (with Codeigniter), Bootstrap, Jquery and React, but also I try with others like Vue Js, Node and some JS framework."
+	},
+	"education": {
+		"utn": {
+			"title": "INFORMATION SYSTEMS ENGINEER",
+			"time": "May 2009 - 2020"
+		},
+		"cfp_1": {
+			"title": "Desktop app and web with JAVA",
+			"time": "Mar 2015 - Dec 2015"
+		},
+		"cfp_2": {
+			"title": "VB COURSE",
+			"time": "Mar 2014 - Dec 2014"
+		}
+	},
+	"experience": {
+		"developer": "DEVELOPER",
+		"full-stack": "Full stack developer",
+		"front-end": "FrontEnd developer",
+		"FABA": {
+			"time": "Jar 2019 - Present",
+			"description": "Full Stack developer with classic asp and asp .net, Bootstrap and Jquery. Mobile developer with JS, PhoneGap."
+		},
+		"FREELANCE": {
+			"time": "May 2014 - Present",
+			"description": "Full Stack developer with PHP, Codeigniter, Bootstrap, Jquery and React. Mobile developer with JS, PhoneGap and F7."
+		},
+		"ARZION": {
+			"time": "Mar 2016 - Dec 2018",
+			"description": "First months full stack developer with PHP Codeigniter and Jquery. React developer until 2018."
+		},
+		"SUONPER": {
+			"time": "Mar 2013 - Mar 2016",
+			"description": "Full Stack developer with PHP and Jquery. Mobile developer with JS, PhoneGap."
+		}
+	},
+	"skills": {
+		"responsive-design": "Responsive Design",
+		"cross-browser-testing-debugging": "Unit Testing",
+		"mobile-first-responsive-design": "Mobile developer",
+		"cross-functional-teams": "Cross Functional Teams",
+		"agile-development-scrum": "Agile Development & Scrum"
+	}
+}
