@@ -4,7 +4,7 @@
 		id="sideNav"
 	>
 		<a class="navbar-brand js-scroll-trigger" href="#page-top">
-			<span class="d-block d-lg-none">{{getName}}</span>
+			<span class="d-block d-lg-none">{{ getName }}</span>
 			<span class="d-none d-lg-block"
 				><img
 					class="img-fluid img-profile rounded-circle mx-auto mb-2"
@@ -36,19 +36,33 @@
 					class="nav-item"
 				>
 					<router-link
+						v-if="m.path"
 						class="nav-link js-scroll-trigger"
 						:to="m.path"
 						>{{ m.title }}</router-link
 					>
+					<a
+						v-if="m.pdf"
+						class="nav-link js-scroll-trigger"
+						:href="m.pdf"
+						download="cv"
+						target="_blank"
+						>{{ m.title }}</a
+					>
 				</li>
 			</ul>
 		</div>
-		<template>
-		  <div class="locale-changer">
-		    <select v-model="$i18n.locale">
-		      <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang">{{ lang }}</option>
-		    </select>
-		  </div>
+		<template v-if="!isMobile()">
+			<div class="locale-changer">
+				<select v-model="$i18n.locale">
+					<option
+						v-for="(lang, i) in langs"
+						:key="`Lang${i}`"
+						:value="lang"
+						>{{ lang }}</option
+					>
+				</select>
+			</div>
 		</template>
 	</nav>
 </template>
@@ -56,18 +70,28 @@
 <script>
 export default {
 	name: "Menu",
-	props: ["menu"],
+	props: {
+		menu: Array,
+	},
 	methods: {
 		showMenu() {
 			this.visible = !this.visible;
 		},
+		isMobile() {
+		   if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+		     return true
+		   } else {
+		     return false
+		   }
+		 }
+		
 	},
-	data () {
-	    return { 
+	data() {
+		return {
 			visible: false,
-	    	langs: ['en', 'es'] 
-	    }
-	  }
+			langs: ["en", "es"],
+		};
+	},
 };
 </script>
 

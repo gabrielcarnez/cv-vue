@@ -1,5 +1,5 @@
 <template>
-    <section class="resume-section" id="experience">
+    <section class="resume-section" id="education">
         <div class="resume-section-content">
             <h2 class="mb-5">EDUCATION</h2>
             <ExprienceCard

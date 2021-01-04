@@ -16,6 +16,11 @@
 <script>
 export default {
 	name: "Exprience-card",
-	props:["title","sub-title","time","description"]
+	props: {
+		title: String,
+		subTitle: String,
+		time: String,
+		description: String,
+	},
 };
 </script>

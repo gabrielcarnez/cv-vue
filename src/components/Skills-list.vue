@@ -10,6 +10,8 @@
 <script>
 export default {
 	name: "Skills-list",
-	props:["skils-list"]
+	props: {
+		"skils-list": Array,
+	},
 };
 </script>

@@ -28,25 +28,25 @@ export default {
             experience: [
                 {
                     title: "FABA",
-                    subTitle: this.$t("full-stack"),
+                    subTitle: this.$t("experience.full-stack"),
                     time: this.$t("experience.FABA.time"),
                     description: this.$t("experience.FABA.description")
                 },
                 {
                     title: "FREELANCE",
-                    subTitle: this.$t("full-stack"),
+                    subTitle: this.$t("experience.full-stack"),
                     time: this.$t("experience.FREELANCE.time"),
                     description: this.$t("experience.FREELANCE.description")
                 },
                 {
                     title: "ARZION",
-                    subTitle: `${this.$t("full-stack")} - ${this.$t("front-end")}`,
+                    subTitle: `${this.$t("experience.full-stack")} - ${this.$t("experience.front-end")}`,
                     time: this.$t("experience.ARZION.time"),
                     description: this.$t("experience.ARZION.description")
                 },
                 {
                     title: "SUONPER",
-                    subTitle: this.$t("full-stack"),
+                    subTitle: this.$t("experience.full-stack"),
                     time: this.$t("experience.SUONPER.time"),
                     description: this.$t("experience.SUONPER.description")
                 },

@@ -10,7 +10,7 @@
 				<a href="GABRIEL.CARNEZ@GMAIL.COM">GABRIEL.CARNEZ@GMAIL.COM</a>
 			</div>
 			<p class="lead mb-5">
-				{{ $t("about.description") }}
+				{{ $t("about.description", { years: getYearsExperience() }) }}
 			</p>
 			<SocialIcons linkedin="dasdas" facebook="dasdas" />
 		</div>
@@ -23,6 +23,14 @@ export default {
 	name: "About",
 	components: {
 		SocialIcons,
+	},
+	methods: {
+		getYearsExperience() {
+			var yearStart = 2014;
+			var year = new Date().getFullYear();
+			var diffYear = year - yearStart;
+			return diffYear;
+		},
 	},
 	data() {
 		return {};

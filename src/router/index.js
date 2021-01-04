@@ -4,7 +4,7 @@ import About from '../views/About.vue'
 import Experience from '../views/Experience.vue'
 import Education from '../views/Education.vue'
 import Skills from '../views/Skills.vue'
-
+import Contact from '../views/Contact.vue'
 
 Vue.use(VueRouter)
 
@@ -28,6 +28,11 @@ const routes = [
     path: '/skills',
     name: 'Skills',
     component: Skills
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
   },
   //{
     //path: '/about',

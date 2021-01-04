@@ -13,6 +13,10 @@
 <script>
 export default {
 	name: "Education-card",
-	props:["title","sub-title","time"]
+	props: {
+		title: String,
+		subTitle: String,
+		time: String,
+	},
 };
 </script>
