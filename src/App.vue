@@ -33,7 +33,7 @@ export default {
         },
         {
           title:this.$t("menu.download-cv"),
-          pdf:"src/assets/cv.pdf"
+          pdf:"cv.pdf"
         },
          {
           title:this.$t("menu.contact"),

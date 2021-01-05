@@ -51,5 +51,17 @@
 		"mobile-first-responsive-design": "Mobile developer",
 		"cross-functional-teams": "Cross Functional Teams",
 		"agile-development-scrum": "Agile Development & Scrum"
+	},
+	"contact": {
+		"email": "email",
+		"name": "name",
+		"phone": "phone",
+		"message": "message",
+		"send": "send",
+		"sendig": "sending",
+		"an-error!": "An error occurred!",
+		"input-fail": "The {input} is requiered",
+		"server-fail": "Something happend, please try again.",
+		"message-was-send": "The message was sent successfully! Thanks for contact me!"
 	}
 }

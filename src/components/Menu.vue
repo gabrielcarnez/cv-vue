@@ -52,7 +52,7 @@
 				</li>
 			</ul>
 		</div>
-		<template v-if="!isMobile()">
+		<template v-if="false && !isMobile()">
 			<div class="locale-changer">
 				<select v-model="$i18n.locale">
 					<option

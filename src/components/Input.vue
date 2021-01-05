@@ -38,6 +38,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+label:first-letter {
+	text-transform: uppercase;
+}
+
 input {
 	width: 50%;
 }
@@ -46,16 +50,13 @@ textarea {
 	width: 50%;
 }
 
-
-@media (max-width : 400px) {
-    input {
+@media (max-width: 400px) {
+	input {
 		width: 100%;
 	}
 
 	textarea {
 		width: 100%;
 	}
-
 }
-
 </style>

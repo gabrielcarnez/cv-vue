@@ -5,13 +5,15 @@
 				{{ $t("menu.contact") }}
 			</h2>
 			<div class="subheading mb-5">
-				<a href="GABRIEL.CARNEZ@GMAIL.COM">GABRIEL.CARNEZ@GMAIL.COM</a>
+				<a mail="GABRIEL.CARNEZ@GMAIL.COM"
+					>GABRIEL.CARNEZ@GMAIL.COM - tel:+54 221-6138052</a
+				>
 			</div>
-
-			<div
-				class="lead mb-5"
-				v-if="!request.success && request.errors.length == 0"
-			>
+			<EmailError
+				v-if="!request.success && request.errors.length > 0"
+				:errors="request.errors"
+			/>
+			<div class="lead mb-5" v-if="!request.success">
 				<div>
 					<Input
 						v-for="(input, index) in form"
@@ -33,73 +35,97 @@
 					</button>
 				</div>
 			</div>
-			<div
-				class="lead mb-5"
+			<EmailSuccess
 				v-if="request.success && request.errors.length == 0"
-			>
-				{{ $t("message-sended") }}
-			</div>
-			<div
-				class="lead mb-5"
-				v-if="request.success && request.errors.length > 0"
-			>
-				<p>{{ $t("an-error!") }}</p>
-				<p v-for="e in request.errors">{{ e }}</p>
-			</div>
+			/>
 		</div>
 	</section>
 </template>
 
 <script>
 import Input from "@/components/Input.vue";
+import EmailSuccess from "@/components/Email-success.vue";
+import EmailError from "@/components/Email-error.vue";
+
 export default {
 	name: "Contact",
 	components: {
 		Input,
+		EmailSuccess,
+		EmailError,
 	},
 	methods: {
+		validateForm() {
+			for (const input in this.form) {
+				if (!this.form[input].value) {
+					this.request.errors.push(this.form[input].name);
+				}
+			}
+			return this.request.errors.length;
+		},
 		sendEmail() {
-			this.loading = !this.loading;
 			const me = this;
-			setTimeout(function() {
-				me.loading = false;
-				me.form.email.value = "";
-				me.form.name.value = "";
-				me.form.phone.value = "";
-				me.form.message.value = "";
-				me.request.success = true;
-				me.request.errors = ["404 error"];
-			}, 2000);
+
+			if (!me.validateForm()) return;
+			me.loading = true;
+			const params = new URLSearchParams();
+
+			for (const input in me.form) {
+				params.append(me.form[input].name, me.form[input].value);
+			}
+
+			me.request.errors = [];
+			me.axios
+				.post(me.url, params)
+				.then((response) => {
+					const { data } = response;
+					me.request.success = data.success;
+					me.loading = false;
+					if (data.success) {
+						for (const input in me.form) {
+							me.form[input].value = "";
+						}
+						me.request.errors = [];
+					} else {
+						me.request.errors = data.messsage;
+					}
+				})
+				.catch((e) => {
+					console.log(e);
+					me.request.errors = ["server-error"];
+					this.loading = false;
+				});
 		},
 	},
 	data() {
 		return {
 			loading: false,
+			url: "http://gabrielcarnez.com.ar/send-email.php",
 			request: {
 				success: false,
 				errors: [],
 			},
 			form: {
 				email: {
-					label: "contact.email",
+					label: this.$t("contact.email"),
 					type: "email",
 					name: "email",
 					value: "",
 				},
 				name: {
-					label: "contact.name",
+					label: this.$t("contact.name"),
 					type: "text",
 					name: "name",
 					value: "",
 				},
 				phone: {
-					label: "contact.phone",
+					label: this.$t("contact.phone"),
 					type: "phone",
 					name: "phone",
 					value: "",
 				},
 				message: {
-					label: "contact.message",
+					label: this.$t("contact.message"),
 					type: "textarea",
 					name: "message",
 					value: "",
@@ -121,12 +147,16 @@ button {
 	width: 50%;
 }
 
+button:first-letter {
+	text-transform: uppercase;
+}
+
 button:hover {
 	background-color: #1c8234;
 }
 
-@media (max-width : 400px) {
-    button {
+@media (max-width: 400px) {
+	button {
 		font-weight: bold;
 		color: white;
 		background-color: #28a745;
@@ -143,7 +173,7 @@ button:hover {
 }
 
 .spinner > div {
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 	height: 60%;
 	width: 6px;
 	display: inline-block;
@@ -195,6 +225,4 @@ button:hover {
 		-webkit-transform: scaleY(1);
 	}
 }
-
-
 </style>
