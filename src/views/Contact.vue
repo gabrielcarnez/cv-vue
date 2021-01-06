@@ -61,12 +61,11 @@ export default {
 					this.request.errors.push(this.form[input].name);
 				}
 			}
-			return this.request.errors.length;
+			return this.request.errors.length == 0;
 		},
 		sendEmail() {
 			const me = this;
-
-			if (!me.validateForm()) return;
+			if (!me.validateForm()) return false;
 			me.loading = true;
 			const params = new URLSearchParams();
 

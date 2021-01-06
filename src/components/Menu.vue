@@ -49,6 +49,13 @@
 						target="_blank"
 						>{{ m.title }}</a
 					>
+					<a
+						v-if="m.link"
+						class="nav-link js-scroll-trigger"
+						:href="m.link"
+						target="_blank"
+						>{{ m.title }}<small></small></a
+					>
 				</li>
 			</ul>
 		</div>

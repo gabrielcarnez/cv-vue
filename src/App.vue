@@ -39,6 +39,14 @@ export default {
           title:this.$t("menu.contact"),
           path: "/contact",
         },
+        {
+          title:this.$t("menu.reaact-version"),
+          link:"http://gabrielcarnez.com.ar/react-cv/"
+        },
+        {
+          title:this.$t("menu.show-code"),
+          link:"https://github.com/gabrielcarnez/cv-vue"
+        },
       ],
     };
   },
