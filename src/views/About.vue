@@ -12,7 +12,10 @@
 			<p class="lead mb-5">
 				{{ $t("about.description", { years: getYearsExperience() }) }}
 			</p>
-			<SocialIcons linkedin="https://www.linkedin.com/in/gabriel-david-carnez/" facebook="https://www.facebook.com/gabriel.carnez/" />
+			<SocialIcons 
+			github="https://github.com/gabrielcarnez/"
+			linkedin="https://www.linkedin.com/in/gabriel-david-carnez/" 
+			facebook="https://www.facebook.com/gabriel.carnez/" />
 		</div>
 	</section>
 </template>
